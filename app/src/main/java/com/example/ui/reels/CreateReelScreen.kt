@@ -183,10 +183,10 @@ fun CreateReelScreen(viewModel: MainViewModel) {
                     .border(1.dp, Color.White.copy(alpha = 0.1f), RoundedCornerShape(18.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                AsyncImage(
-                    model = selectedVideoUri,
-                    contentDescription = "Video preview",
-                    contentScale = ContentScale.Crop,
+                com.example.ui.components.VideoPlayer(
+                    videoUrl = selectedVideoUri.toString(),
+                    isMuted = false,
+                    isPlaying = true,
                     modifier = Modifier.fillMaxSize()
                 )
                 
@@ -219,7 +219,7 @@ fun CreateReelScreen(viewModel: MainViewModel) {
                         .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Text(
-                        text = "🎬 Video Clip Ready",
+                        text = "🎬 Live Video Preview",
                         color = Color.White,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold
